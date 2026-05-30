@@ -28,3 +28,12 @@ Visit http://127.0.0.1:5000
 ## License
 
 Educational / assessment project.
+
+Here are some snapshots of the Health prediction AI Application:
+Dashboard - 
+<img width="1723" height="915" alt="image" src="https://github.com/user-attachments/assets/d3a1a9eb-e4b0-4e92-930f-df2a45faa729" />
+Adding a new Patient-
+<img width="1718" height="918" alt="image" src="https://github.com/user-attachments/assets/5f3902f0-a066-470a-817d-44e8d59384fe" />
+View Ptient's healt -
+<img width="1626" height="903" alt="image" src="https://github.com/user-attachments/assets/781408cc-afe8-4e1a-99e2-b02fcf60b1ed" />
+
