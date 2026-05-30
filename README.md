@@ -148,11 +148,6 @@ Add your UI captures under `docs/screenshots/` and they will render here on GitH
 
 *Form to enter contact details and blood test values; remarks are generated on save.*
 
-> **Note for submission:** Place your snapshot files as:
-> - `docs/screenshots/dashboard.png`
-> - `docs/screenshots/view-patient.png`
-> - `docs/screenshots/add-patient.png`
-
 ---
 
 ## Getting Started
