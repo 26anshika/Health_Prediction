@@ -129,19 +129,22 @@ Add your UI captures under `docs/screenshots/` and they will render here on GitH
 
 ### Patient Dashboard (List all records)
 
-![Patient Dashboard](docs/screenshots/dashboard.png)
+<img width="1696" height="897" alt="dashboard" src="https://github.com/user-attachments/assets/beb20172-3932-43ce-879c-bf6d01a27e2b" />
+
 
 *Main dashboard: patient table, lab values, assessment summary, and CRUD action buttons.*
 
 ### View Patient (Detail + Health Assessment)
 
-![View Patient](docs/screenshots/view-patient.png)
+<img width="1633" height="882" alt="view-patient" src="https://github.com/user-attachments/assets/a31a5b79-5907-4bbe-b8e6-955cf2fdf7ca" />
+
 
 *Patient profile, colour-coded lab cards, and structured AI health remarks.*
 
 ### Add Patient (Create record)
 
-![Add Patient](docs/screenshots/add-patient.png)
+<img width="1672" height="812" alt="add-patient" src="https://github.com/user-attachments/assets/f18da998-c152-49cf-9098-c7dbfa9f3363" />
+
 
 *Form to enter contact details and blood test values; remarks are generated on save.*
 
@@ -289,15 +292,5 @@ This application produces **automated screening remarks** for educational and as
 ---
 
 ## Author
-
+Anshika Yadav
 Assessment submission — Health Prediction Application (AI/ML Skills Evaluation).
-
-
-Here are some snapshots of the Health prediction AI Application:
-Dashboard - 
-<img width="1723" height="915" alt="image" src="https://github.com/user-attachments/assets/d3a1a9eb-e4b0-4e92-930f-df2a45faa729" />
-Adding a new Patient-
-<img width="1718" height="918" alt="image" src="https://github.com/user-attachments/assets/5f3902f0-a066-470a-817d-44e8d59384fe" />
-View Ptient's healt -
-<img width="1626" height="903" alt="image" src="https://github.com/user-attachments/assets/781408cc-afe8-4e1a-99e2-b02fcf60b1ed" />
-
