@@ -1,0 +1,426 @@
+:root {
+  --hp-primary: #0d9488;
+  --hp-primary-dark: #0f766e;
+  --hp-secondary: #0369a1;
+  --hp-bg: #f0f9ff;
+  --hp-card: #ffffff;
+  --hp-text: #0f172a;
+  --hp-muted: #64748b;
+  --hp-success: #10b981;
+  --hp-warning: #f59e0b;
+  --hp-danger: #ef4444;
+  --hp-radius: 1rem;
+  --hp-shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  background: linear-gradient(160deg, #ecfeff 0%, var(--hp-bg) 40%, #f8fafc 100%);
+  color: var(--hp-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.container {
+  flex: 1;
+}
+
+/* Navbar */
+.navbar-hp {
+  background: linear-gradient(135deg, var(--hp-primary-dark), var(--hp-secondary)) !important;
+  padding: 0.75rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nav-link {
+  font-weight: 500;
+}
+
+.btn-nav-cta {
+  background: #fff;
+  color: var(--hp-primary-dark) !important;
+  border-radius: 2rem;
+  padding: 0.4rem 1.1rem !important;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.btn-nav-cta:hover {
+  background: #ecfeff !important;
+  transform: translateY(-1px);
+}
+
+/* Hero */
+.hero-section {
+  position: relative;
+  border-radius: var(--hp-radius);
+  overflow: hidden;
+  min-height: 200px;
+  background: linear-gradient(
+      105deg,
+      rgba(15, 118, 110, 0.92) 0%,
+      rgba(3, 105, 161, 0.75) 55%,
+      rgba(15, 23, 42, 0.4) 100%
+    ),
+    url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80")
+      center / cover no-repeat;
+  color: #fff;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--hp-shadow);
+}
+
+.hero-section h1 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.hero-section p {
+  opacity: 0.95;
+  max-width: 36rem;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.hero-stat {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 0.75rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Cards */
+.card-hp {
+  border: none;
+  border-radius: var(--hp-radius);
+  background: var(--hp-card);
+  box-shadow: var(--hp-shadow);
+}
+
+.card-hp .card-header {
+  background: transparent;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1.25rem 1.5rem;
+}
+
+.section-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+}
+
+.section-icon.teal {
+  background: #ccfbf1;
+  color: var(--hp-primary-dark);
+}
+
+.section-icon.blue {
+  background: #e0f2fe;
+  color: var(--hp-secondary);
+}
+
+.section-icon.purple {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+/* Table */
+.table-hp thead th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--hp-muted);
+  font-weight: 600;
+  border-bottom-width: 1px;
+  white-space: nowrap;
+}
+
+.table-hp tbody tr {
+  transition: background 0.15s ease;
+}
+
+.table-hp tbody tr:hover {
+  background: #f0fdfa;
+}
+
+.remarks-preview {
+  max-width: 200px;
+  font-size: 0.8125rem;
+  color: var(--hp-muted);
+  line-height: 1.4;
+}
+
+/* Status badges */
+.badge-status {
+  font-weight: 600;
+  font-size: 0.7rem;
+  padding: 0.35em 0.75em;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-status.normal {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge-status.caution {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-status.alert {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Lab value cards */
+.lab-card {
+  border-radius: var(--hp-radius);
+  padding: 1.25rem;
+  height: 100%;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lab-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.lab-card.normal {
+  border-left: 4px solid var(--hp-success);
+  background: linear-gradient(135deg, #fff 0%, #f0fdf4 100%);
+}
+
+.lab-card.caution {
+  border-left: 4px solid var(--hp-warning);
+  background: linear-gradient(135deg, #fff 0%, #fffbeb 100%);
+}
+
+.lab-card.alert {
+  border-left: 4px solid var(--hp-danger);
+  background: linear-gradient(135deg, #fff 0%, #fef2f2 100%);
+}
+
+.lab-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.lab-unit {
+  font-size: 0.8rem;
+  color: var(--hp-muted);
+  font-weight: 500;
+}
+
+/* Remarks panel */
+.remarks-hero {
+  border-radius: var(--hp-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.remarks-hero.normal {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  border: 1px solid #a7f3d0;
+}
+
+.remarks-hero.caution {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 1px solid #fcd34d;
+}
+
+.remarks-hero.alert {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border: 1px solid #fca5a5;
+}
+
+.marker-remark-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+.marker-remark-card:last-child {
+  margin-bottom: 0;
+}
+
+.marker-remark-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.remark-bullet {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: #334155;
+}
+
+.remark-bullet i {
+  color: var(--hp-primary);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.insight-box {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  color: #0c4a6e;
+}
+
+.disclaimer-box {
+  font-size: 0.8rem;
+  color: var(--hp-muted);
+  border-top: 1px dashed #cbd5e1;
+  padding-top: 1rem;
+  margin-top: 1.25rem;
+}
+
+/* Patient profile header */
+.patient-header {
+  background: linear-gradient(135deg, #fff 0%, #f0fdfa 100%);
+  border-radius: var(--hp-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: var(--hp-shadow);
+}
+
+.patient-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form */
+.form-side-image {
+  border-radius: var(--hp-radius);
+  overflow: hidden;
+  min-height: 100%;
+  background: url("https://images.unsplash.com/photo-1579684385127-1ef15f9a952c?auto=format&fit=crop&w=600&q=80")
+    center / cover no-repeat;
+  position: relative;
+}
+
+.form-side-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 118, 110, 0.85), rgba(3, 105, 161, 0.9));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  color: #fff;
+}
+
+.form-side-overlay h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.input-group-icon {
+  position: relative;
+}
+
+.input-group-icon i {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--hp-muted);
+  z-index: 5;
+}
+
+.input-group-icon .form-control {
+  padding-left: 2.5rem;
+}
+
+/* Empty state */
+.empty-state-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer-hp {
+  background: #fff;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 3rem;
+}
+
+.btn-primary {
+  background: var(--hp-primary);
+  border-color: var(--hp-primary);
+}
+
+.btn-primary:hover {
+  background: var(--hp-primary-dark);
+  border-color: var(--hp-primary-dark);
+}
+
+.btn-outline-primary {
+  color: var(--hp-primary-dark);
+  border-color: var(--hp-primary);
+}
+
+.btn-outline-primary:hover {
+  background: var(--hp-primary);
+  border-color: var(--hp-primary);
+}
+
+.back-link {
+  color: var(--hp-primary-dark);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.back-link:hover {
+  color: var(--hp-secondary);
+}

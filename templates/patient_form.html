@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block title %}{% if action == 'edit' %}Edit{% else %}New{% endif %} Patient — Health Prediction{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('index') }}" class="back-link mb-3">
+  <i class="bi bi-arrow-left"></i> Back to patients
+</a>
+
+<div class="row g-4">
+  <div class="col-lg-5 d-none d-lg-block">
+    <div class="form-side-image" style="min-height: 520px;">
+      <div class="form-side-overlay">
+        <i class="bi bi-heart-pulse fs-1 mb-3"></i>
+        <h2>{% if action == 'edit' %}Update patient record{% else %}New health screening{% endif %}</h2>
+        <p class="small mb-0 opacity-90">
+          Enter blood test values and we will generate a clear, easy-to-understand health assessment automatically.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-7">
+    <div class="card card-hp">
+      <div class="card-header">
+        <div class="d-flex align-items-center">
+          <span class="section-icon teal">
+            <i class="bi bi-{% if action == 'edit' %}pencil-square{% else %}person-plus{% endif %}"></i>
+          </span>
+          <div>
+            <h1 class="h4 mb-0">{% if action == 'edit' %}Edit Patient{% else %}Add New Patient{% endif %}</h1>
+            <p class="text-muted small mb-0">All fields marked with * are required</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-body p-4">
+        <form method="post" novalidate>
+          <h2 class="h6 text-muted text-uppercase mb-3">
+            <i class="bi bi-person-vcard me-1"></i> Contact details
+          </h2>
+          <div class="row g-3 mb-4">
+            <div class="col-12">
+              <label for="full_name" class="form-label fw-semibold">Full Name <span class="text-danger">*</span></label>
+              <div class="input-group-icon">
+                <i class="bi bi-person"></i>
+                <input type="text" class="form-control" id="full_name" name="full_name" required maxlength="120"
+                       placeholder="e.g. Jane Doe"
+                       value="{% if patient is mapping %}{{ patient.get('full_name', '') }}{% elif patient %}{{ patient.full_name }}{% endif %}">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="date_of_birth" class="form-label fw-semibold">Date of Birth <span class="text-danger">*</span></label>
+              <div class="input-group-icon">
+                <i class="bi bi-calendar3"></i>
+                <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required
+                       max="{{ today }}"
+                       value="{% if patient is mapping %}{{ patient.get('date_of_birth', '') }}{% elif patient %}{{ patient.date_of_birth.isoformat() }}{% endif %}">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+              <div class="input-group-icon">
+                <i class="bi bi-envelope"></i>
+                <input type="email" class="form-control" id="email" name="email" required maxlength="120"
+                       placeholder="name@example.com"
+                       value="{% if patient is mapping %}{{ patient.get('email', '') }}{% elif patient %}{{ patient.email }}{% endif %}">
+              </div>
+            </div>
+          </div>
+
+          <h2 class="h6 text-muted text-uppercase mb-3">
+            <i class="bi bi-droplet me-1"></i> Blood test results
+          </h2>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label for="glucose" class="form-label fw-semibold">Glucose <span class="text-danger">*</span></label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-droplet-half"></i></span>
+                <input type="number" step="0.01" min="0" class="form-control" id="glucose" name="glucose" required
+                       placeholder="70–99 normal"
+                       value="{% if patient is mapping %}{{ patient.get('glucose', '') }}{% elif patient %}{{ patient.glucose }}{% endif %}">
+                <span class="input-group-text small">mg/dL</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="haemoglobin" class="form-label fw-semibold">Haemoglobin <span class="text-danger">*</span></label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-heart-pulse"></i></span>
+                <input type="number" step="0.01" min="0" class="form-control" id="haemoglobin" name="haemoglobin" required
+                       placeholder="12–17 normal"
+                       value="{% if patient is mapping %}{{ patient.get('haemoglobin', '') }}{% elif patient %}{{ patient.haemoglobin }}{% endif %}">
+                <span class="input-group-text small">g/dL</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="cholesterol" class="form-label fw-semibold">Cholesterol <span class="text-danger">*</span></label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-activity"></i></span>
+                <input type="number" step="0.01" min="0" class="form-control" id="cholesterol" name="cholesterol" required
+                       placeholder="&lt;200 ideal"
+                       value="{% if patient is mapping %}{{ patient.get('cholesterol', '') }}{% elif patient %}{{ patient.cholesterol }}{% endif %}">
+                <span class="input-group-text small">mg/dL</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-light border mt-4 mb-0 small">
+            <i class="bi bi-magic text-primary me-2"></i>
+            After saving, a <strong>clear health assessment</strong> will be generated in the Remarks section using AI and clinical guidelines.
+          </div>
+
+          <div class="d-flex gap-2 mt-4">
+            <button type="submit" class="btn btn-primary px-4">
+              <i class="bi bi-{% if action == 'edit' %}check-lg{% else %}clipboard2-pulse{% endif %} me-1"></i>
+              {% if action == 'edit' %}Save &amp; Refresh Assessment{% else %}Create &amp; Generate Assessment{% endif %}
+            </button>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
