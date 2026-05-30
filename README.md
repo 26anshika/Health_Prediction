@@ -256,26 +256,11 @@ Client-side HTML5 validation is supplemented by server-side checks on every subm
 
 ---
 
-## Demo Video & Submission
-
-When submitting the assessment, provide:
-
-1. **GitHub repository link** (public or shared with assessors)
-2. **Demo video** (OBS Studio, Zoom, etc.) covering:
-   - CRUD walkthrough via the UI
-   - Why this technology stack was chosen
-   - Challenges faced during development
-
-A full **spoken script and scene checklist** is in **[DEMO_VIDEO_SCRIPT.txt](DEMO_VIDEO_SCRIPT.txt)**.
-
----
-
 ## Documentation
 
 | File | Purpose |
 |------|---------|
 | [LOCAL_SETUP.md](LOCAL_SETUP.md) | Install and run locally |
-| [DEMO_VIDEO_SCRIPT.txt](DEMO_VIDEO_SCRIPT.txt) | Video recording guide |
 | [.env.example](.env.example) | Safe environment variable template |
 
 ---
